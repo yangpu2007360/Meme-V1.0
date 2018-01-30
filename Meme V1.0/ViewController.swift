@@ -9,17 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
-
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var share: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var share: UIButton!
+  
     
     
     let imagePicker = UIImagePickerController()
     let buttomDelegate = ButtomTextFieldDelegate()
-    
-    var meme = Meme()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +46,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func shareButtonPressed(_ sender: Any) {
+    
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
         
-         let memedImage = generateMemedImage()
+   
+       
+                 let memedImage = generateMemedImage()
         
-        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        self.present(controller, animated: true, completion: nil)
-        
+                let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+                self.present(controller, animated: true, completion: nil)
         
         
     }
+    
+
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let userPickedImage = info[UIImagePickerControllerOriginalImage]
@@ -122,15 +128,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
-//        toolbar.hidden = true
-//        navbar.hidden = true
+        toolbar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        self.navigationController?.setToolbarHidden(false, animated: false)
         
-//        toolbar.hidden = false
+        toolbar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
 //        navbar.hidden = false
         
         return memedImage
@@ -138,8 +147,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         // Create the meme
-        memedImage = generateMemedImage()
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let memedImage = generateMemedImage()
+        let meme = Meme(customertopText: topTextField.text!, customerbottomText: bottomTextField.text!, customerorinialImage: imageView.image!, customermemedImage: memedImage)
     }
 
     

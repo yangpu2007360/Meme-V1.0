@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTw-LE-ztG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,13 +40,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Icq-wS-dy7">
-                                <rect key="frame" x="181" y="14" width="13" height="48"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-FH-nXo">
                                 <rect key="frame" x="181" y="561" width="13" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -54,19 +47,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYX-0z-8so">
-                                <rect key="frame" x="24" y="23" width="60" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="HbR-01-S0O"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Share">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N0v-Oh-tzd"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHO-1Q-gIk" userLabel="Top Text Field">
+                                <rect key="frame" x="139" y="78" width="97" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,27 +64,51 @@
                             <constraint firstItem="Y8x-pg-rDl" firstAttribute="top" secondItem="K3x-Gm-tXA" secondAttribute="bottom" id="K6J-QH-iIV"/>
                             <constraint firstItem="K3x-Gm-tXA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MP4-vE-wuQ"/>
                             <constraint firstItem="K3x-Gm-tXA" firstAttribute="trailing" secondItem="Y8x-pg-rDl" secondAttribute="trailing" id="MjF-Zt-3CT"/>
+                            <constraint firstItem="AHO-1Q-gIk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="OFB-Sx-uZF"/>
+                            <constraint firstItem="AHO-1Q-gIk" firstAttribute="centerX" secondItem="Ob0-FH-nXo" secondAttribute="centerX" id="Sp0-78-foC"/>
                             <constraint firstAttribute="trailing" secondItem="K3x-Gm-tXA" secondAttribute="trailing" id="WZg-75-KVx"/>
-                            <constraint firstItem="Icq-wS-dy7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="14" id="eae-v5-auh"/>
-                            <constraint firstItem="dYX-0z-8so" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="j2c-WO-yht"/>
+                            <constraint firstItem="AHO-1Q-gIk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="bCN-Rj-mvd"/>
                             <constraint firstItem="Y8x-pg-rDl" firstAttribute="top" secondItem="Ob0-FH-nXo" secondAttribute="bottom" constant="14" id="lys-LF-AYf"/>
-                            <constraint firstItem="Icq-wS-dy7" firstAttribute="centerX" secondItem="K3x-Gm-tXA" secondAttribute="centerX" id="ogy-g9-hxb"/>
-                            <constraint firstItem="Icq-wS-dy7" firstAttribute="leading" secondItem="dYX-0z-8so" secondAttribute="trailing" constant="97" id="trZ-X3-jcU"/>
-                            <constraint firstItem="dYX-0z-8so" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="wIL-H5-hih"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v34-af-Y24"/>
+                    <navigationItem key="navigationItem" id="v34-af-Y24">
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="SaK-ME-Ygd">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="c3i-5y-y5O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="Ob0-FH-nXo" id="W5h-3V-9kj"/>
                         <outlet property="imageView" destination="K3x-Gm-tXA" id="uUc-7h-UTF"/>
-                        <outlet property="share" destination="dYX-0z-8so" id="K44-Op-HRl"/>
-                        <outlet property="topTextField" destination="Icq-wS-dy7" id="WSW-zI-iFj"/>
+                        <outlet property="navigationBar" destination="v34-af-Y24" id="bRg-Ne-42i"/>
+                        <outlet property="share" destination="SaK-ME-Ygd" id="Kq9-Le-UR5"/>
+                        <outlet property="toolbar" destination="Y8x-pg-rDl" id="baT-Dd-L6S"/>
+                        <outlet property="topTextField" destination="AHO-1Q-gIk" id="y8t-Sg-QM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="29.23538230884558"/>
+            <point key="canvasLocation" x="703.20000000000005" y="29.23538230884558"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eqc-dI-usg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WTw-LE-ztG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tdf-yG-zKa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vwa-E8-doC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UeW-4n-cT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="29"/>
         </scene>
     </scenes>
 </document>
