@@ -13,7 +13,7 @@
 		312B183F201D0D540003D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312B183D201D0D540003D96F /* Main.storyboard */; };
 		312B1841201D0D540003D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312B1840201D0D540003D96F /* Assets.xcassets */; };
 		312B1844201D0D540003D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312B1842201D0D540003D96F /* LaunchScreen.storyboard */; };
-		312B184C201DAA000003D96F /* ButtomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312B184B201DAA000003D96F /* ButtomTextFieldDelegate.swift */; };
+		312B184C201DAA000003D96F /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		312B1840201D0D540003D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		312B1843201D0D540003D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312B1845201D0D540003D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		312B184B201DAA000003D96F /* ButtomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				312B1839201D0D540003D96F /* AppDelegate.swift */,
 				312B183B201D0D540003D96F /* ViewController.swift */,
-				312B184B201DAA000003D96F /* ButtomTextFieldDelegate.swift */,
+				312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */,
 				312B183D201D0D540003D96F /* Main.storyboard */,
 				31170DEA201EE54700507F3B /* Meme.swift */,
 				312B1840201D0D540003D96F /* Assets.xcassets */,
@@ -144,7 +144,7 @@
 			files = (
 				312B183C201D0D540003D96F /* ViewController.swift in Sources */,
 				31170DEB201EE54700507F3B /* Meme.swift in Sources */,
-				312B184C201DAA000003D96F /* ButtomTextFieldDelegate.swift in Sources */,
+				312B184C201DAA000003D96F /* BottomTextFieldDelegate.swift in Sources */,
 				312B183A201D0D540003D96F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

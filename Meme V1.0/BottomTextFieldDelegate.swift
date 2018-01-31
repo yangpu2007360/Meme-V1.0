@@ -9,11 +9,8 @@
 import Foundation
 import UIKit
 
-class ButtomTextFieldDelegate : NSObject,UITextFieldDelegate {
+class BottomTextFieldDelegate : NSObject,UITextFieldDelegate {
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        textField.text = ""
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
