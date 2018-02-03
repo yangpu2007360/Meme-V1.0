@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class Meme {
+struct Meme {
     
     var topText : String = "TOP"
     var bottomText : String = "BOTTOM"
     var originalImage : UIImage? = nil
     var memedImage : UIImage? = nil
     
-    init(customertopText: String, customerbottomText: String , customerorinialImage: UIImage, customermemedImage:UIImage) {
-        topText = customertopText; bottomText = customerbottomText; originalImage = customerorinialImage; memedImage = customermemedImage
-    }
+//    init(customertopText: String, customerbottomText: String , customerorinialImage: UIImage, customermemedImage:UIImage) {
+//        topText = customertopText; bottomText = customerbottomText; originalImage = customerorinialImage; memedImage = customermemedImage
+//    }
 }

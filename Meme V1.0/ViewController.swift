@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     let imagePicker = UIImagePickerController()
-    let buttomDelegate = BottomTextFieldDelegate()
+    let bottomDelegate = BottomTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +137,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         // Create the meme
         let memedImage = generateMemedImage()
-        let meme = Meme(customertopText: topTextField.text!, customerbottomText: bottomTextField.text!, customerorinialImage: imageView.image!, customermemedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        
+        // Add it to the memes array on the Application Delegate
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        
     }
     
     func configure(textField: UITextField, withText text: String) {
@@ -158,7 +162,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
            topTextField.delegate = self
         }
         else {
-            bottomTextField.delegate = buttomDelegate
+            bottomTextField.delegate = bottomDelegate
         }
         
 
