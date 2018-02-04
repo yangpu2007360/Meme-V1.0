@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var share: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var camera: UIBarButtonItem!
-    
+    @IBOutlet weak var album: UIBarButtonItem!
     
     
     let imagePicker = UIImagePickerController()
@@ -55,19 +55,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
 
-        let memedImage = generateMemedImage()
-        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
-            
-            if completed == true {
-                self.save()
-            }
-        }
+//        let memedImage = generateMemedImage()
+//        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+//        controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+//
+//           if completed == true {
+//               self.save()
+//                  controller.dismiss(animated: true, completion: nil)
+//                  self.dismiss(animated: true, completion: nil)
+//           }
+//       }
+//        
+//        let view = storyboard?.instantiateViewController(withIdentifier: "ViewController")
+//        self.present(view!, animated: true, completion: nil)
         
+        let memedImage = generateMemedImage()
+        let controller : UIActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         self.present(controller, animated: true, completion: nil)
         
-  
+        controller.completionWithItemsHandler =
+            {
+                (activityType,completed,items,errors) in
+                if(completed)
+                {
+                    self.save()
+                    controller.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+        }
+        
+        let view = storyboard?.instantiateViewController(withIdentifier: "ViewController")
+        self.present(view!, animated: true, completion: nil)
+    
     }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -141,7 +173,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Add it to the memes array on the Application Delegate
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-        
+
     }
     
     func configure(textField: UITextField, withText text: String) {

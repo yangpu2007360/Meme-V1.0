@@ -15,6 +15,7 @@
 		312B1844201D0D540003D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312B1842201D0D540003D96F /* LaunchScreen.storyboard */; };
 		312B184C201DAA000003D96F /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */; };
 		315B149F202667E200DDA6FB /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B149E202667E200DDA6FB /* MemeTableViewController.swift */; };
+		315B14A12026D2A900DDA6FB /* MemeMeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B14A02026D2A900DDA6FB /* MemeMeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		312B1845201D0D540003D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
 		315B149E202667E200DDA6FB /* MemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		315B14A02026D2A900DDA6FB /* MemeMeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				312B1839201D0D540003D96F /* AppDelegate.swift */,
 				312B183B201D0D540003D96F /* ViewController.swift */,
 				315B149E202667E200DDA6FB /* MemeTableViewController.swift */,
+				315B14A02026D2A900DDA6FB /* MemeMeDetailViewController.swift */,
 				312B184B201DAA000003D96F /* BottomTextFieldDelegate.swift */,
 				31170DEA201EE54700507F3B /* Meme.swift */,
 				312B183D201D0D540003D96F /* Main.storyboard */,
@@ -147,6 +150,7 @@
 			files = (
 				312B183C201D0D540003D96F /* ViewController.swift in Sources */,
 				31170DEB201EE54700507F3B /* Meme.swift in Sources */,
+				315B14A12026D2A900DDA6FB /* MemeMeDetailViewController.swift in Sources */,
 				312B184C201DAA000003D96F /* BottomTextFieldDelegate.swift in Sources */,
 				315B149F202667E200DDA6FB /* MemeTableViewController.swift in Sources */,
 				312B183A201D0D540003D96F /* AppDelegate.swift in Sources */,
