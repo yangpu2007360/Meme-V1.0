@@ -5,24 +5,19 @@
 //  Created by pu yang on 2/3/18.
 //  Copyright © 2018 pu yang. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class MemeTableViewController: UITableViewController {
 
     var memes = [Meme]()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    override func viewDidLoad() {
-       super.viewDidLoad()
-       
-    }
-
     override func viewWillAppear(_ animated: Bool) {
-
         super.viewWillAppear(animated)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         memes = appDelegate.memes
-        tableView!.reloadData()
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -38,11 +33,13 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeViewCell", for: indexPath)
-        let meme = memes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCellTable")!
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        tableView.rowHeight = 100
         
         cell.imageView?.image = meme.memedImage
-        cell.textLabel?.text = meme.topText
+        cell.textLabel?.text = meme.topText + "..." + meme.bottomText
         
         return cell
         
