@@ -17,18 +17,18 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var camera: UIBarButtonItem!
     @IBOutlet weak var album: UIBarButtonItem!
+    @IBOutlet weak var cancel: UIBarButtonItem!
     
     
     let imagePicker = UIImagePickerController()
-    let bottomDelegate = BottomTextFieldDelegate()
     var savedMeme : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure(textField: topTextField, withText: "TOP")
         configure(textField: bottomTextField, withText: "BOTTOM")
         camera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        share.isEnabled = false
         
     }
     
@@ -36,6 +36,7 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,8 +50,11 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
         presentImagePickerWith(sourceType: .camera)
     }
     
+    
+    
     @IBAction func albumButtonPressed(_ sender: Any) {
         presentImagePickerWith(sourceType: .photoLibrary)
+
     }
     
     
@@ -79,11 +83,17 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
    
     }
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let userPickedImage = info[UIImagePickerControllerOriginalImage]
         imageView.image = userPickedImage as? UIImage
         imagePicker.dismiss(animated: true, completion: nil)
+        share.isEnabled = true
         
     }
     
@@ -96,7 +106,7 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder{
-           view.frame.origin.y = 0 - getKeyboardHeight(notification)
+           view.frame.origin.y = -getKeyboardHeight(notification)
         }
         
     }
@@ -125,8 +135,7 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
     
     func unsubscribeFromKeyboardNotifications() {
         
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func generateMemedImage() -> UIImage {
@@ -167,14 +176,8 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
         
         textField.text = text
         imagePicker.delegate = self
-        
-        if textField == topTextField {
-           topTextField.delegate = self
-        }
-        else {
-            bottomTextField.delegate = bottomDelegate
-        }
-        
+        topTextField.delegate = self
+        bottomTextField.delegate = self
 
     }
     
@@ -185,8 +188,9 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
     
     func hideTopAndBottomBars(_ hide: Bool) {
        
-        toolbar.isHidden = hide
+        toolbar.isHidden = true
         self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        topToolBar.isHidden = true
  
     }
 

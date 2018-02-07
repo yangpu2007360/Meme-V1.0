@@ -16,7 +16,5 @@ struct Meme {
     var originalImage : UIImage? = nil
     var memedImage : UIImage? = nil
     
-//    init(customertopText: String, customerbottomText: String , customerorinialImage: UIImage, customermemedImage:UIImage) {
-//        topText = customertopText; bottomText = customerbottomText; originalImage = customerorinialImage; memedImage = customermemedImage
-//    }
+    
 }

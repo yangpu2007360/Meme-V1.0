@@ -54,8 +54,4 @@ class MemeTableViewController: UITableViewController {
 
     }
 
-    
-
-
-
 }
